@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.3s ease-out forwards;
+}
+
+@keyframes zoom-in-out {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.floating-button {
+  animation: zoom-in-out 1.8s ease-in-out infinite;
+}
+
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f9f9f9; /* hoặc bg-gray-50 */
+  overflow-x: hidden;
+}
+
+
+/* 👇 Custom animation for dropdown */
+@layer utilities {
+  .animate-dropdown {
+    animation: dropdown 0.2s ease-out forwards;
+  }
+
+  @keyframes dropdown {
+    0% {
+      opacity: 0;
+      transform: scale(95%) translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(100%) translateY(0);
+    }
+  }
+}
+
+
+
+
+
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+  75% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.swing {
+  animation: swing 1.5s ease-in-out infinite;
+  transform-origin: center; /* để xoay đều ở giữa */
+}
+
+
+
